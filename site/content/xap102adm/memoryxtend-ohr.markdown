@@ -71,9 +71,9 @@ In addition to the general [MemoryXtend configuration options](./memoryxtend.htm
 
 # JVM Configuration
 
-Configure the maximum off-heap(direct) memory that the JVM will allocate: -XX:MaxDirectMemorySize=100G, off-heap(direct) memory is separate from the JVM heap allocated by -Xmx. 
-The value allocated by `-XX:MaxDirectMemorySize` must not exceed physical RAM, and should likely to be less than total available RAM.
-Default value of `-XX:MaxDirectMemorySize` is depends on your JVM version, Oracle Java default is 64mb.
+Configure the maximum off-heap (direct) memory that the JVM will allocate using the `-XX:MaxDirectMemorySize` property. This is off-heap(direct) memory pool that is separate from the JVM heap allocated by the `-Xmx`. 
+
+The value set for the `-XX:MaxDirectMemorySize` must not exceed physical RAM and should likely to be less than total available RAM. Default value of `-XX:MaxDirectMemorySize` depends on your JVM version - Oracle JVM default is 64MB.
 
 Configuring an IMDG (Space) with BlobStore should be done via the `MapDBBlobStoreDataPolicyFactoryBean`, or the `MapDBBlobStoreConfigurer`. For example:
 
